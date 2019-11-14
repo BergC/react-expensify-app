@@ -55,7 +55,7 @@ export default class ExpenseForm extends React.Component {
         e.preventDefault();
 
         if (!this.state.description || !this.state.amount) {
-            // Show an error is either description or amount are missing.
+            // Show an error if either description or amount are missing.
             this.setState(() => ({ error: 'Please provide both a description and amount.' }));
         } else {
             // Clear the error if description and amount are provided.
