@@ -2,7 +2,6 @@ import React from 'react';
 import moment from 'moment';
 import 'react-dates/initialize'
 import { SingleDatePicker } from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
 
 export default class ExpenseForm extends React.Component {
     // Use the constructor so that we get access to props being passed in on EditExpensePage.
