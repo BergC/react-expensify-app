@@ -5,6 +5,7 @@ import expenses from '../fixtures/expenses';
 
 let wrapper, editExpense, removeExpense, history;
 
+// Initialize each variable value before running each test.
 beforeEach(() => {
     editExpense = jest.fn();
     removeExpense = jest.fn();

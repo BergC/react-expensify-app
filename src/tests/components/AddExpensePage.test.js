@@ -5,6 +5,7 @@ import expenses from '../fixtures/expenses';
 
 let addExpense, history, wrapper;
 
+// Initialize each variable value before running each test.
 beforeEach(() => {
     addExpense = jest.fn();
     history = { push: jest.fn() };
