@@ -1,5 +1,6 @@
 // Path is a Node module that lets us join paths while accessing the __dirname variable.
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env) => {
     const isProduction = env === 'production';
@@ -18,14 +19,19 @@ module.exports = (env) => {
             }, {
                 test: /\.s?css$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader'
                 ]
             }]
         },
+        plugins: [
+            new MiniCssExtractPlugin({
+                filename: 'styles.css'
+            }),
+        ],
         // Load different source maps based on whether we're building production or development.
-        devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
+        devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
             contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true
