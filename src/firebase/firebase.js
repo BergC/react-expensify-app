@@ -17,4 +17,9 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
+// Disable Google validation caching.
+googleAuthProvider.setCustomParameters({
+    'prompt': 'select_account'
+});
+
 export { firebase, googleAuthProvider, database as default };
